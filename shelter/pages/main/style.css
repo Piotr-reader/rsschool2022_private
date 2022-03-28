@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a:hover {
+    text-decoration: none;
+}
+label {
+    margin: 0;
+}
+.wrapper {
+    /* background: #F6F6F6; */
+    max-width: 1280px;
+    background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding-top: 60px;
+}
+.logo_title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 35px;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+}
+.logo_subtitle {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+.navbar {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    align-items: center;
+}
+.navbar_text {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #CDCDCD;
+    height: 24px;
+    margin-right: 35px;
+}
+.navbar_active {
+    color: #FAFAFA;
+    border-bottom: 3px solid #F1CDB3;
+    padding-bottom: 5px;
+}
+.navbar_text:hover {
+    color: #FAFAFA;
+    cursor: pointer;
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section_first {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+.section_first_head {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    color: #FFFFFF;
+    margin-left: 22px;
+    margin-bottom: 25px;
+}
+.paragraph_1 {
+    max-width: 460px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #CDCDCD;
+    margin-bottom: 42px;
+}
+.section_first_btn {
+    background: #F1CDB3;
+    border-radius: 100px;
+    width: 207px;
+    height: 52px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px ;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+.section_first_btn:hover {
+    background: #FDDCC4;
+}
