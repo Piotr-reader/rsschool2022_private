@@ -135,9 +135,7 @@ main {
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
-    line-height: 45px ;
-    display: flex;
-    align-items: center;
+    line-height: 45px;
     letter-spacing: 0.06em;
     color: #545454;
     margin-bottom: 25px;
@@ -177,6 +175,7 @@ main {
     line-height: 45px;
     letter-spacing: 0.06em;
     color: #545454;
+    padding-top: 80px;
     margin-bottom: 60px;
 }
 .btn_previous {
@@ -244,3 +243,87 @@ main {
 .section_slider_btn:hover {
     background: #FDDCC4;
 }
+.section_help {
+    text-align: center;
+    background: #FFFFFF;
+}
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+.pet_food {
+    background: url(/shelter/assets/icons/icon-pet-food.svg) no-repeat 50% 0;
+}
+.transportation {
+    background: url(/shelter/assets/icons/icon-transportation.svg) no-repeat 50% 0;
+}
+.toys {
+    background: url(/shelter/assets/icons/icon-toys.svg) no-repeat 50% 0;
+}
+.bowls {
+    background: url(/shelter/assets/icons/icon-bowls-and-cups.svg) no-repeat 50% 0;
+}
+.shampo {
+    background: url(/shelter/assets/icons/icon-shampoos.svg) no-repeat 50% 0;
+}
+.vitamin {
+    background: url(/shelter/assets/icons/icon-vitamins.svg) no-repeat 50% 0;
+}
+.medicine {
+    background: url(/shelter/assets/icons/icon-medicines.svg) no-repeat 50% 0;
+}
+.collar {
+    background: url(/shelter/assets/icons/icon-collars-leashes.svg) no-repeat 50% 0;
+}
+.sleep {
+    background: url(/shelter/assets/icons/icon-sleeping-area.svg) no-repeat 50% 0;
+}
+.grid_description {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    padding-top: 90px;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+/* section donation */
+.section_donation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F6F6F6;
+}
+.donation_head {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.bank_account {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.donation_description {
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #B2B2B2;
+    width: 380px;
+    }
