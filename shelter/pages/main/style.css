@@ -26,8 +26,8 @@ header {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 60px;
-    padding-top: 60px;
+    margin-bottom: 50px;
+    padding-top: 40px;
 }
 .logo_title {
     font-family: 'Georgia';
@@ -68,6 +68,9 @@ header {
     height: 24px;
     margin-right: 35px;
 }
+.navbar_text_last {
+    margin-right: 0px;
+}
 .navbar_active {
     color: #FAFAFA;
     border-bottom: 3px solid #F1CDB3;
@@ -81,7 +84,8 @@ main {
 .section_first {
     display: flex;
     margin: 0 auto;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: space-between;
     max-width: 1200px;
 }
 .section_first_head {
@@ -90,8 +94,10 @@ main {
     font-weight: 400;
     font-size: 44px;
     color: #FFFFFF;
-    margin-left: 22px;
-    margin-bottom: 25px;
+    letter-spacing: 2px;
+    line-height: 55px;
+    padding-top: 148px;
+    margin-bottom: 40px;
 }
 .paragraph_1 {
     max-width: 460px;
@@ -101,7 +107,7 @@ main {
     font-size: 15px;
     line-height: 24px;
     color: #CDCDCD;
-    margin-bottom: 42px;
+    margin-bottom: 43px;
 }
 .section_first_btn {
     background: #F1CDB3;
@@ -123,12 +129,13 @@ main {
 .section_about {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     background: #FFFFFF;
 }
 .section_about_img {
     padding-top: 80px;
     padding-right: 120px;
+    padding-bottom: 80px;
 }
 .section_about_head {
     font-family: 'Georgia';
@@ -136,9 +143,10 @@ main {
     font-weight: 400;
     font-size: 35px;
     line-height: 45px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
     color: #545454;
-    margin-bottom: 25px;
+    padding-top: 75px;
+    margin-bottom: 24px;
 }
 .section_about_description {
     width: 430px;
@@ -150,7 +158,7 @@ main {
     font-size: 15px;
     line-height: 24px;
     color: #4C4C4C;
-    margin-bottom: 25px;
+    margin-bottom: 26px;
 }
 .slider {
     background: #F6F6F6;
@@ -247,10 +255,23 @@ main {
     text-align: center;
     background: #FFFFFF;
 }
+.section_about_help {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.1em;
+    color: #545454;
+    padding-top: 60px;
+    margin-bottom: 60px;
+}
 .grid_container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr 1fr;
+    row-gap: 50px;
+    margin-bottom: 85px;
 }
 .pet_food {
     background: url(/shelter/assets/icons/icon-pet-food.svg) no-repeat 50% 0;
@@ -293,8 +314,12 @@ main {
 .section_donation {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     background: #F6F6F6;
+}
+.donation_img {
+    padding-top: 90px;
+    margin-bottom: 110px;
 }
 .donation_head {
     font-family: 'Georgia';
@@ -304,6 +329,9 @@ main {
     line-height: 45px;
     letter-spacing: 0.06em;
     color: #545454;
+    padding-top: 60px;
+    margin-bottom: 20px;
+
 }
 .bank_account {
     font-family: 'Georgia';
@@ -311,9 +339,8 @@ main {
     font-weight: 400;
     font-size: 15px;
     line-height: 17px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.06em;
+    padding-left: 20px;
+    letter-spacing: 0.1em;
     color: #545454;
 }
 .donation_description {
@@ -334,7 +361,7 @@ main {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding-top: 56px;
+    padding-top: 40px;
 }
 .footer_head {
     font-family: 'Georgia';
@@ -369,5 +396,5 @@ main {
     line-height: 23px;
     letter-spacing: 0.06em;
     color: #F1CDB3;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
 }
