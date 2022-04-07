@@ -357,6 +357,7 @@ main {
     padding-left: 20px;
     letter-spacing: 0.1em;
     color: #545454;
+    margin-bottom: 20px;
 }
 .donation_description {
     font-family: 'Arial';
@@ -380,6 +381,8 @@ main {
     align-items: center;
     justify-content: center;
     letter-spacing: 0.06em;
+    margin-left: 15px;
+    margin-bottom: 20px;
 }
 .section_donation_btn h4 {
     font-family: 'Georgia';
@@ -388,7 +391,7 @@ main {
     font-size: 20px;
     letter-spacing: 0.06em;
     color: #545454;
-    margin-left: 15px;
+    margin-left: 35px;
 }
 .section_donation_btn:hover {
     background: #FDDCC4;
