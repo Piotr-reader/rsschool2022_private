@@ -7,6 +7,9 @@ body {
     max-width: 1280px;
     margin: 0 auto;
 }
+a {
+    text-decoration: none;
+}
 a:hover {
     text-decoration: none;
     color: #292929;
@@ -110,10 +113,10 @@ main {
     padding: 0 40px;
 }
 .card {
-    width: 270px;
+    /* width: 270px;
     height: 435px;
     text-align: center;
-    justify-self: center;
+    justify-self: center; */
     background: #FAFAFA;
     border-radius: 9px;
 }
