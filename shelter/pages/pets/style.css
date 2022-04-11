@@ -148,6 +148,7 @@ main {
 }
 .btn_slider:hover {
     background: #FDDCC4;
+    cursor: pointer;
 }
 .slider_btns {
     display: flex;

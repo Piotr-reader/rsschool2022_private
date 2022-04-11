@@ -260,6 +260,7 @@ main {
     margin-bottom: 30px;
 }
 .btn_slider:hover {
+    cursor: pointer;
     background: #FDDCC4;
 }
 .section_slider_btn {
@@ -272,6 +273,7 @@ main {
 }
 .section_slider_btn:hover {
     background: #FDDCC4;
+    cursor: pointer;
 }
 .section_help {
     text-align: center;
