@@ -206,10 +206,10 @@ main {
     background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
    }
 .footer_content {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
+    margin: 0 auto;
     justify-content: space-between;
+    padding: 0 40px;
     padding-top: 40px;
 }
 .footer_head {
@@ -249,4 +249,35 @@ main {
     letter-spacing: 0.06em;
     color: #F1CDB3;
     margin-bottom: 18px;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 0px 30px;
+        padding-top: 14px;
+    }
+    .main_pets_head {
+        margin-bottom: 25px;
+    }
+    .pets_slider {
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+        grid-auto-rows: 0;
+        padding: 0 93px;
+    }
+
+    .slider_btns {
+        margin-top: 40px;
+        padding-bottom: 75px;
+    }
+
+    .footer_content {
+       flex-wrap: wrap;
+       padding: 0 66px;
+       padding-top: 11px;
+    }
+    .footer_puppy {
+        margin: 0 auto;
+        padding-top: 25px;
+    }
+
 }
