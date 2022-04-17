@@ -747,6 +747,7 @@ main {
     height: 100%;
     background-color: #292929;
     transition: .3s;
+    text-align: center;
   }
   .navbar li {
       margin-bottom: 64px;
