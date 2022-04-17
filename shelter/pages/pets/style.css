@@ -26,7 +26,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 40px;
+
     margin: 0 auto;
     margin-bottom: 20px;
     padding-top: 40px;
@@ -119,6 +121,7 @@ main {
     justify-self: center; */
     background: #FAFAFA;
     border-radius: 9px;
+
     transition: 300ms;
     overflow: hidden;
 }
@@ -132,6 +135,7 @@ main {
 .card:hover .btn_slider{
     background: #FDDCC4;
     transition: 500ms;
+
 }
 .pets-card-title {
     font-family: 'Georgia';
@@ -144,7 +148,9 @@ main {
     margin: 30px 0;
 }
 .btn_slider {
+
     width: 70%;
+
     height: 52px;
     border: 2px solid #F1CDB3;
     box-sizing: border-box;
@@ -161,11 +167,13 @@ main {
 }
 .btn_slider:hover {
     background: #FDDCC4;
+
 }
 .slider_btns {
     display: flex;
     max-width: 340px;
     padding: 0 10px;
+
     margin: 0 auto;
     justify-content: space-between;
     margin-top: 60px;
@@ -207,10 +215,12 @@ main {
     background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
    }
 .footer_content {
+
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
     padding: 0 40px;
+
     padding-top: 40px;
 }
 .footer_head {
@@ -250,6 +260,7 @@ main {
     letter-spacing: 0.06em;
     color: #F1CDB3;
     margin-bottom: 18px;
+
 }
 
 @media (max-width: 767px) {
@@ -424,4 +435,5 @@ main {
     .footer_content {
         padding: 0 10px;
     }
+
 }
