@@ -284,13 +284,15 @@ main {
 
 }
 
+@media (max-width: 480px) {
+    .nav_hidden {
+        display: none;
+    }
+}
 @media (max-width: 319px) {
     header {
         padding: 0px 10px;
         padding-top: 10px;
-    }
-    .nav_hidden {
-        display: none;
     }
     .main_pets_head {
         font-size: 25px;
