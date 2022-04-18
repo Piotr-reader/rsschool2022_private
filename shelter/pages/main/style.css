@@ -198,11 +198,14 @@ main {
     align-items: center;
     justify-content: space-around;
 }
+.slider_track {
+    overflow: hidden;
+}
 .slider_container {
     display: flex;
 
     width: 900px;
-    overflow: hidden;
+
     gap: 45px;
 
 }
@@ -247,7 +250,6 @@ main {
     background: #FDDCC4;
     border: 2px solid #FDDCC4;
 }
-
 .slider_btn_small {
     display: none;
 }
@@ -318,6 +320,16 @@ main {
 }
 .slider_btn_container_small {
     display: none;
+}
+.btn_notActive {
+    cursor: default;
+    border: 2px solid #CDCDCD;
+    background: none;
+}
+.btn_notActive:hover {
+    cursor: default;
+    border: 2px solid #CDCDCD;
+    background: none;
 }
 /*  section HELP */
 
@@ -662,6 +674,9 @@ main {
         font-size: 12px;
         margin-left: 10px;
     }
+    .slider_container {
+        width: 290px;
+    }
 }
 
 @media (max-width: 319px) {
@@ -856,6 +871,11 @@ main {
     border: 2px solid #F1CDB3;
     border-radius: 100px;
     cursor: pointer;
+  }
+  .btn_previous_small:hover,
+  .btn_next_small:hover {
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
   }
   .section_slider_btn {
       margin-bottom: 42px;
