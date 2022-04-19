@@ -30,8 +30,10 @@ if (cardWidth < 580) {
 let movePosition = cardWidth;
 if (cardWidth > 767) {
 movePosition = (cardWidth+45)/slidsToShow;
-} else {
+} else if (cardWidth > 319) {
 movePosition = (cardWidth+40)/slidsToShow;
+} else {
+    movePosition = (cardWidth+20)/slidsToShow;
 }
 
 if (position === 0) {
@@ -44,48 +46,69 @@ if (position === 0) {
 
 
 btn_js_previous.addEventListener("mousedown", () => {
-    const itemLeft = Math.abs(position)/cardWidth;
-    position += itemLeft >= 1 ? movePosition : itemLeft*cardWidth;
+    if (position != 0) {
+        const itemLeft = itemsCount + (Math.abs(position) + slidsToShow*cardWidth)/cardWidth;
+        position += itemLeft >= 1 ? movePosition : itemLeft*cardWidth;
+    }
     if (position === 0) {
         btn_js_previous.classList.add('btn_notActive');
         btn_js_previous.disabled = true;
-        btn_js_small_previous.classList.add('btn_notActive');
-        btn_js_small_previous.disabled = true;
     } else {
         btn_js_next.classList.remove('btn_notActive');
         btn_js_next.disabled = false;
+    }
+    setPosition();
+ });
+
+btn_js_small_previous.addEventListener("mousedown", () => {
+    if (position != 0) {
+        const itemLeft = itemsCount + (Math.abs(position) + slidsToShow*cardWidth)/cardWidth;
+        position += itemLeft >= 1 ? movePosition : itemLeft*cardWidth;
+    }
+    if (position === 0) {
+        btn_js_small_previous.classList.add('btn_notActive');
+        btn_js_small_previous.disabled = true;
+    } else {
         btn_js_small_next.classList.remove('btn_notActive');
         btn_js_small_next.disabled = false;
 
     }
     setPosition();
- });
-btn_js_small_previous.addEventListener("mousedown", () => {
-    // console.log(btn_js_small_previous);
 });
 
 
 
 btn_js_next.addEventListener("mousedown", () => {
-   const itemLeft = itemsCount - (Math.abs(position) + slidsToShow*cardWidth)/cardWidth;
 
-   position -= itemLeft >= 1 ? movePosition : itemLeft*cardWidth;
+   const itemLeft = itemsCount - (Math.abs(position) + slidsToShow*cardWidth)/cardWidth;
+   position -= itemLeft >= 0 ? movePosition : itemLeft*cardWidth;
    if (position <= -((itemsCount-slidsToShow)*cardWidth)/slidsToShow) {
     btn_js_next.classList.add('btn_notActive');
     btn_js_next.disabled = true;
-    btn_js_small_next.classList.add('btn_notActive');
-    btn_js_small_next.disabled = true
+
     } else {
         btn_js_previous.classList.remove('btn_notActive');
         btn_js_previous.disabled = false;
-        btn_js_small_previous.classList.remove('btn_notActive');
-        btn_js_small_previous.disabled = false;
+
     }
 setPosition();
 });
 btn_js_small_next.addEventListener("mousedown", () => {
-    // console.log(btn_js_small_next);
+
+   const itemLeft = itemsCount - (Math.abs(position) + slidsToShow*cardWidth)/cardWidth;
+   console.log(itemLeft);
+   position -= itemLeft >= 0 ? movePosition : itemLeft*cardWidth;
+   if (position <= -((itemsCount-slidsToShow)*cardWidth)/slidsToShow) {
+    btn_js_small_next.classList.add('btn_notActive');
+    btn_js_small_next.disabled = true;
+
+    } else {
+    btn_js_small_previous.classList.remove('btn_notActive');
+    btn_js_small_previous.disabled = false;
+    }
+setPosition();
 });
+
 
 const setPosition = () => {
     track.style.transform = `translateX(${position}px)`;

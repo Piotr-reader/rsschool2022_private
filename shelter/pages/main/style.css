@@ -210,7 +210,7 @@ main {
     width: 900px;
 
     gap: 45px;
-
+    transition: all 0.8s ease 0s;
 }
 .slider_head {
     font-family: 'Georgia';
@@ -1028,6 +1028,16 @@ main {
   .btn_next_small:hover {
     background: #FDDCC4;
     border: 2px solid #FDDCC4;
+  }
+  .btn_notActive {
+    cursor: default;
+    border: 2px solid #CDCDCD;
+    background: none;
+  }
+  .btn_notActive:hover {
+    cursor: default;
+    border: 2px solid #CDCDCD;
+    background: none;
   }
   .section_slider_btn {
       margin-bottom: 42px;
