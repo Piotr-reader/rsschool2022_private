@@ -90,3 +90,31 @@ btn_js_small_next.addEventListener("mousedown", () => {
 const setPosition = () => {
     track.style.transform = `translateX(${position}px)`;
 }
+
+
+// popup
+const POPUP_BTNS = document.querySelectorAll('.btn_slider');
+const BODY = document.querySelector('.popup_body');
+const POPUP_BODY = document.querySelector('body');
+const POPUP = document.querySelector('.popup');
+const POPUP_CLOSE = document.querySelector('.popup_close');
+
+
+ if (POPUP_BTNS.length > 0) {
+     for ( let i = 0; i < POPUP_BTNS.length; i++) {
+         const BTN_LINK = POPUP_BTNS[i];
+         BTN_LINK.addEventListener('mousedown', (e) => {
+            const GET_NAME = BTN_LINK.getAttribute('data-name');
+             console.log(GET_NAME);
+            POPUP.classList.add('open');
+            BODY.classList.add('body_lock');
+            // setTimeout(BODY.style.paddingRight = '17px', 800);
+            e.preventDefault();
+         });
+     }
+ }
+    POPUP_CLOSE.addEventListener('mousedown', () => {
+         POPUP.classList.remove('open');
+        //  BODY.classList.remove('body_lock');
+        //  setTimeout(BODY.style.paddingRight = '0px', 800);
+    });
