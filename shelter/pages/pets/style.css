@@ -27,13 +27,12 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #FFFFFF;
-    padding: 0 40px;
+    padding: 10px 40px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 50;
     margin: 0 auto;
-    padding-top: 40px;
 }
 .header_wrapper {
     width: 1200px;
@@ -111,7 +110,7 @@ main {
     line-height: 45px;
     letter-spacing: 0.1em;
     color: #545454;
-    padding-top: 80px;
+    padding-top: 180px;
     margin-bottom: 60px;
 }
 .pets_slider {
@@ -278,16 +277,17 @@ main {
     }
     .main_pets_head {
         margin-bottom: 25px;
+        padding-top: 80px;
     }
     .pets_slider {
         grid-template: repeat(3, 1fr) / repeat(2, 1fr);
         grid-auto-rows: 0;
-        row-gap: 0;
+        /* row-gap: 0; */
         padding: 0 93px;
     }
 
     .slider_btns {
-        margin-top: 40px;
+        margin-top: 15px;
         padding-bottom: 75px;
     }
 
@@ -326,7 +326,7 @@ main {
       .logo_title {
         position: relative;
         z-index: 2;
-        margin: 30px 38px 10px 10px;
+        margin: 30px 0px 10px 10px;
         font-size: 32px;
     }
     .logo_subtitle {
@@ -435,13 +435,27 @@ main {
     .pets_slider {
         grid-template: repeat(3, 1fr) / repeat(1, 1fr);
         padding: 0;
+        grid-gap: 0;
     }
     .slider_btns {
         margin-top: 25px;
         padding-bottom: 40px;
     }
     .footer_content {
+        display: unset;
         padding: 0 10px;
+        text-align: center;
     }
-
+    .footer_head {
+        margin-top: 8px;
+        margin-bottom: 40px;
+        line-height: 35px;
+    }
+    .address h3 {
+        margin-top: 0px;
+        margin-bottom: 33px;
+    }
+    .footer_puppy {
+        padding-top: 42px;
+    }
 }
