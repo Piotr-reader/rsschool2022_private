@@ -26,12 +26,20 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    background-color: #FFFFFF;
     padding: 0 40px;
-
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
     margin: 0 auto;
-    margin-bottom: 20px;
     padding-top: 40px;
+}
+.header_wrapper {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .logo_title {
     font-family: 'Georgia';
@@ -263,7 +271,7 @@ main {
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1279px) {
     header {
         padding: 0px 30px;
         padding-top: 14px;
@@ -295,7 +303,7 @@ main {
 
 }
 
-@media (max-width: 319px) {
+@media (max-width: 767px) {
     header {
         padding: 0;
         position: fixed;

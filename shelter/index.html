@@ -62,43 +62,45 @@
         <h3 class="slider_head">Our friends who <br>
           are looking for a house</h3>
           <div class="slider_pets">
-            <div class="btn_previous"><img src="./assets/images/Arrow-previus.png" alt="arrow"></div>
-            <div class="slider_container">
-              <div class="card">
+            <button class="btn_previous btn_js_previous"><img src="./assets/images/Arrow-previus.png" alt="arrow"></button>
+            <div class="slider_track">
+             <div class="slider_container">
+               <div class="card">
                 <img src="./assets/images/pets-katrine.png" alt="picture">
-                <p class="pets-card-title">Katrine</p>
-                <button class="btn_slider">Learn more</button>
-              </div>
-              <div class="card">
+                <p class="pets-card-title">katrine</p>
+                <button class="btn_slider" data-name="katrine">Learn more</button>
+               </div>
+               <div class="card">
                 <img src="./assets/images/pets-jennifer.png" alt="picture">
-                <p class="pets-card-title">Jennifer</p>
-                <button class="btn_slider">Learn more</button>
-              </div>
-              <div class="card">
+                <p class="pets-card-title">jennifer</p>
+                <button class="btn_slider" data-name="jennifer">Learn more</button>
+               </div>
+               <div class="card">
                 <img src="./assets/images/pets-woody.png" alt="picture">
-                <p class="pets-card-title">Woody</p>
-                <button class="btn_slider">Learn more</button>
-              </div>
-              <div class="card">
+                <p class="pets-card-title">woody</p>
+                <button class="btn_slider" data-name="woody">Learn more</button>
+               </div>
+               <div class="card">
                 <img src="./assets/images/pets-katrine.png" alt="picture">
-                <p class="pets-card-title">Katrine</p>
-                <button class="btn_slider">Learn more</button>
-              </div>
-              <div class="card">
+                <p class="pets-card-title">katrine</p>
+                <button class="btn_slider" data-name="katrine">Learn more</button>
+               </div>
+               <div class="card">
                 <img src="./assets/images/pets-jennifer.png" alt="picture">
-                <p class="pets-card-title">Jennifer</p>
-                <button class="btn_slider">Learn more</button>
-              </div>
-              <div class="card">
+                <p class="pets-card-title">jennifer</p>
+                <button class="btn_slider" data-name="jennifer">Learn more</button>
+               </div>
+               <div class="card">
                 <img src="./assets/images/pets-woody.png" alt="picture">
-                <p class="pets-card-title">Woody</p>
-                <button class="btn_slider">Learn more</button>
-              </div>
+                <p class="pets-card-title">woody</p>
+                <button class="btn_slider" data-name="woody">Learn more</button>
+               </div>
             </div>
-            <div class="btn_next"><img src="./assets/images/Arrow-next.png" alt="arrow"></div>
+           </div>
+             <button class="btn_next btn_js_next"><img src="./assets/images/Arrow-next.png" alt="arrow"></button>
             <div class="slider_btn_container_small">
-              <div class="btn_previous_small"><img src="./assets/images/Arrow-previus.png" alt="arrow"></div>
-              <div class="btn_next_small"><img src="./assets/images/Arrow-next.png" alt="arrow"></div>
+              <button class="btn_previous_small btn_js_small_previous"><img src="./assets/images/Arrow-previus.png" alt="arrow"></button>
+              <button class="btn_next_small btn_js_small_next"><img src="./assets/images/Arrow-next.png" alt="arrow"></button>
             </div>
           </div>
           <a href="./pages/pets/index.html">
@@ -172,6 +174,28 @@
       </form>
     </div>
 </footer>
+
+<div id="popup" class="popup">
+  <div class="popup_body">
+    <div class="popup_content">
+      <button class="popup_close"><img src="./assets/icons/close-popup.svg" alt="picture"></button>
+      <div class="popup_title">
+        <img class="popup_img" src="./assets/images/pets-jennifer.png" alt="picture">
+        <div class="popup_text">
+          <p class="popup_name">jennifer</p>
+          <p class="popup_type">Dog - Labrador</p>
+          <p class="popup_description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+          <ul>
+            <li><p class="popup_links popup_age">Age: 2 months</p></li>
+            <li><p class="popup_links popup_inoculations">Inoculations: none</p></li>
+            <li><p class="popup_links popup_diseases">Diseases: none</p></li>
+            <li><p class="popup_links popup_parasites">Parasites: none</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="./pages/main/script.js"></script>
 
