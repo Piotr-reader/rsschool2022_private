@@ -177,6 +177,7 @@ const createCardTemplate = () => {
     const createP = document.createElement('p');
     const createBtn = document.createElement('button');
     card.classList.add('card');
+    card.dataset.name = arrayAnimal[genNum].name.toLowerCase();
     createP.classList.add('pets-card-title');
     createBtn.classList.add('btn_slider');
     createBtn.innerText = 'Learn more';
@@ -289,8 +290,8 @@ const randomGenerate = () => {
 
 
 
-
 // popup
+const POPUP_CARDS = document.querySelectorAll('.card');
 const POPUP_BTNS = document.querySelectorAll('.btn_slider');
 const BODY = document.querySelector('.popup_body');
 const POPUP_BODY = document.querySelector('body');
@@ -299,16 +300,15 @@ const POPUP_CLOSE = document.querySelector('.popup_close');
 const POPUP_TITLE = document.querySelector('.popup_title');
 
 
- if (POPUP_BTNS.length > 0) {
-     for ( let i = 0; i < POPUP_BTNS.length; i++) {
-         const BTN_LINK = POPUP_BTNS[i];
+ if (POPUP_CARDS.length > 0) {
+     for ( let i = 0; i < POPUP_CARDS.length; i++) {
+         const BTN_LINK = POPUP_CARDS[i];
          BTN_LINK.addEventListener('mousedown', (e) => {
-            const GET_NAME = e.target.getAttribute('data-name');
+             const GET_NAME = e.target.closest('div').getAttribute('data-name');
             arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show()
             POPUP.classList.add('open');
             POPUP_BODY.classList.add('body_lock');
             POPUP_TITLE.classList.add('active_title');
-            // setTimeout(BODY.style.paddingRight = '17px', 800);
             e.preventDefault();
          });
      }
@@ -318,7 +318,6 @@ const POPUP_TITLE = document.querySelector('.popup_title');
          POPUP.classList.remove('open');
          POPUP_BODY.classList.remove('body_lock');
          POPUP_TITLE.classList.remove('active_title');
-        //  setTimeout(BODY.style.paddingRight = '0px', 800);
     });
 
     if (POPUP.hasAttributes('popup_open')) {

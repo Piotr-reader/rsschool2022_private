@@ -22,15 +22,17 @@
           <span></span>
 
         </div>
-        <nav>
-            <ul class="navbar">
+        <nav class="navbar_container">
+          <div class="navbar">
+            <ul class="navbar_width">
                 <li><a class="navbar_text" href="../../index.html">About the shelter</a></li>
-                <li><a class="navbar_text navbar_active" href="#">Our pets</a></li>
+                <li><a class="navbar_text navbar_active navbar_main" href="#">Our pets</a></li>
 
-                <li><a class="navbar_text" href="../../index.html#help_section">Help the shelter</a></li>
+                <li><a class="navbar_text navbar_text_first" href="../../index.html#help_section">Help the shelter</a></li>
 
                 <li><a class="navbar_text navbar_text_last" href="#footer_section">Contacts</a></li>
             </ul>
+          </div>
         </nav>
       </div>
       </header>
@@ -42,58 +44,45 @@
         <h3 class="main_pets_head">Our friends who<br>are looking for a house</h3>
 
         <div class="pets_slider">
-          <div class="card">
-
+          <div class="card" data-name="katrine">
             <img class="card_img" src="../../assets/images/pets-katrine.png" alt="picture">
-
             <p class="pets-card-title">Katrine</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="katrine">Learn more</button>
           </div>
-          <div class="card">
-
+          <div class="card" data-name="jennifer">
             <img class="card_img" src="../../assets/images/pets-jennifer.png" alt="picture">
-
             <p class="pets-card-title">Jennifer</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="jennifer">Learn more</button>
           </div>
-          <div class="card">
-
+          <div class="card" data-name="woody">
             <img class="card_img" src="../../assets/images/pets-woody.png" alt="picture">
-
             <p class="pets-card-title">Woody</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="woody">Learn more</button>
           </div>
-          <div class="card">
-
+          <div class="card" data-name="sophia">
             <img class="card_img" src="../../assets/images/pets-sophia.png" alt="picture">
-
             <p class="pets-card-title">Sophia</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="sophia">Learn more</button>
           </div>
-          <div class="card">
-
+          <div class="card" data-name="timmy">
             <img class="card_img" src="../../assets/images/pets-timmy.png" alt="picture">
-
             <p class="pets-card-title">Timmy</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="timmy">Learn more</button>
           </div>
-          <div class="card">
-
+          <div class="card" data-name="charly">
             <img class="card_img" src="../../assets/images/pets-charly.png" alt="picture">
             <p class="pets-card-title">Charly</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="charly">Learn more</button>
           </div>
-          <div class="card">
+          <div class="card" data-name="scarlett">
             <img class="card_img" src="../../assets/images/pets-scarlet.png" alt="picture">
-
             <p class="pets-card-title">Scarlett</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="scarlett">Learn more</button>
           </div>
-          <div class="card">
-
+          <div class="card" data-name="freddie">
             <img class="card_img" src="../../assets/images/pets-freddie.png" alt="picture">
             <p class="pets-card-title">Freddie</p>
-            <button class="btn_slider">Learn more</button>
+            <button class="btn_slider" data-name="freddie">Learn more</button>
           </div>
 
 
@@ -135,6 +124,28 @@
           </form>
         </div>
     </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup_body">
+        <div class="popup_content">
+          <button class="popup_close"><img src="../../assets/icons/close-popup.svg" alt="picture"></button>
+          <div class="popup_title">
+            <img class="popup_img" src="../../assets/images/pets-jennifer.png" alt="picture">
+            <div class="popup_text">
+              <p class="popup_name">jennifer</p>
+              <p class="popup_type">Dog - Labrador</p>
+              <p class="popup_description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+              <ul>
+                <li><p class="popup_links popup_age">Age: 2 months</p></li>
+                <li><p class="popup_links popup_inoculations">Inoculations: none</p></li>
+                <li><p class="popup_links popup_diseases">Diseases: none</p></li>
+                <li><p class="popup_links popup_parasites">Parasites: none</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
 
