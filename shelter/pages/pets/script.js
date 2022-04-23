@@ -199,4 +199,113 @@ const POPUP_TITLE = document.querySelector('.popup_title');
         })
     }
 
+   // pagination
+const btn_first_page = document.querySelector(".btn_first_page");
+const btn_last_page = document.querySelector(".btn_last_page");
+const btn_right = document.querySelector(".btn_right");
+const btn_left = document.querySelector(".btn_left");
+let btn_number = document.querySelector(".btn_number");
+const track = document.querySelector(".pets_slider");
+const pageShowCard = document.querySelector(".card");
+const widthDesctop = document.documentElement.clientWidth;
+
+let itemsArray = [];
+let pageArray = [];
+
+const createCardTemplate = () => {
+    let genNum = Math.floor(Math.random()*8);
+    const card = document.createElement('div');
+    const createImg = document.createElement('img');
+    const createP = document.createElement('p');
+    const createBtn = document.createElement('button');
+    card.classList.add('card');
+    card.dataset.name = arrayAnimal[genNum].name.toLowerCase();
+    createP.classList.add('pets-card-title');
+    createBtn.classList.add('btn_slider');
+    createBtn.innerText = 'Learn more';
+    createBtn.dataset.name = arrayAnimal[genNum].name.toLowerCase();
+    createP.innerHTML = arrayAnimal[genNum].name;
+    createImg.src = arrayAnimal[genNum].img;
+    createImg.alt = 'picture'
+    card.appendChild(createImg);
+    card.appendChild(createP);
+    card.appendChild(createBtn);
+
+    return card;
+}
+
+const moveLeft = () => {
+    if (Number(btn_number.innerHTML) > 1) {
+        btn_number.innerHTML = Number(btn_number.innerHTML)-1;
+        btn_number_update();
+        checkStatusBtn();
+    }
+};
+const moveRight = () => {
+    if (Number(btn_number.innerHTML) < itemsArray.length) {
+        btn_number.innerHTML = Number(btn_number.innerHTML)+1;
+        btn_number_update();
+        checkStatusBtn();
+    }
+};
+const moveStart = () => {
+    btn_number.innerHTML = 1;
+    btn_number_update();
+    checkStatusBtn();
+};
+const moveEnd = () => {
+    btn_number.innerHTML = itemsArray.length;
+    btn_number_update();
+    checkStatusBtn();
+};
+
+let totalPages = 6;
+let totalCards = 8;
+if (widthDesctop < 1280) {
+    totalPages = 8;
+    totalCards = 6;
+}
+if (widthDesctop < 768) {
+    totalPages = 16;
+    totalCards = 3;
+}
+while (itemsArray.length < totalPages) {
+    while (pageArray.length < totalCards) {
+        const card = createCardTemplate();
+        const img = document.createElement('div');
+        img.appendChild(card)
+        pageArray.push(img.innerHTML);
+    }
+    itemsArray.push(pageArray);
+    pageArray =[];
+}
+
+
+const btn_number_update = () => {
+    track.innerHTML = '';
+    let show_page = itemsArray[(Number(btn_number.innerHTML))-1];
+    track.innerHTML = show_page.join('');
+}
+
+const checkStatusBtn = () => {
+    if (Number(btn_number.innerHTML) !== 1) {
+        btn_left.classList.remove('btn_notActive');
+        btn_first_page.classList.remove('btn_notActive');
+    } else {
+        btn_left.classList.add('btn_notActive');
+        btn_first_page.classList.add('btn_notActive');
+    }
+    if (Number(btn_number.innerHTML) !== 6) {
+        btn_right.classList.remove('btn_notActive');
+        btn_last_page.classList.remove('btn_notActive');
+    } else {
+        btn_right.classList.add('btn_notActive');
+        btn_last_page.classList.add('btn_notActive');
+    }
+}
+
+btn_left.addEventListener("mousedown", moveLeft);
+btn_right.addEventListener("mousedown", moveRight);
+btn_first_page.addEventListener("mousedown", moveStart);
+btn_last_page.addEventListener("mousedown", moveEnd);
 
