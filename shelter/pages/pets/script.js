@@ -259,6 +259,7 @@ const moveEnd = () => {
     checkStatusBtn();
 };
 
+
 let totalPages = 6;
 let totalCards = 8;
 if (widthDesctop < 1280) {
@@ -275,6 +276,7 @@ while (itemsArray.length < totalPages) {
         const img = document.createElement('div');
         img.appendChild(card)
         pageArray.push(img.innerHTML);
+        pageArray = [...new Set(pageArray)];
     }
     itemsArray.push(pageArray);
     pageArray =[];

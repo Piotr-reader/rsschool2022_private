@@ -34,7 +34,7 @@ class Animal {
 }
 
 const jennifer = new Animal ({
-    img: 'assets/images/pets-jennifer.png',
+    img: './assets/images/pets-jennifer.png',
     name: 'Jennifer',
     type: 'Dog - Labrador',
     description: "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
@@ -44,7 +44,7 @@ const jennifer = new Animal ({
     parasites: "Parasites: none"
 })
 const sophia = new Animal ({
-    img: 'assets/images/pets-sophia.png',
+    img: './assets/images/pets-sophia.png',
     name: 'Sophia',
     type: 'Dog - Shih tzu',
     age: "Age: 1 months",
@@ -54,7 +54,7 @@ const sophia = new Animal ({
     parasites: "Parasites: none"
 })
 const woody = new Animal ({
-    img: 'assets/images/pets-woody.png',
+    img: './assets/images/pets-woody.png',
     name: 'Woody',
     type: 'Dog - Golden Retriever',
     description: "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
@@ -64,7 +64,7 @@ const woody = new Animal ({
     parasites: "Parasites: none"
 })
 const scarlett = new Animal ({
-    img: 'assets/images/pets-scarlet.png',
+    img: './assets/images/pets-scarlet.png',
     name: 'Scarlett',
     type: 'Dog - Jack Russell Terrier',
     description: "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",
@@ -74,7 +74,7 @@ const scarlett = new Animal ({
     parasites: "Parasites: none"
 })
 const katrine = new Animal ({
-    img: 'assets/images/pets-katrine.png',
+    img: './assets/images/pets-katrine.png',
     name: 'Katrine',
     type: 'Cat - British Shorthair',
     description: "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
@@ -84,7 +84,7 @@ const katrine = new Animal ({
     parasites: "Parasites: none"
 })
 const timmy = new Animal ({
-    img: 'assets/images/pets-timmy.png',
+    img: './assets/images/pets-timmy.png',
     name: 'Timmy',
     type: 'Cat - British Shorthair',
     description: "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
@@ -94,7 +94,7 @@ const timmy = new Animal ({
     parasites: "Parasites: none"
 })
 const freddie = new Animal ({
-    img: 'assets/images/pets-freddie.png',
+    img: './assets/images/pets-freddie.png',
     name: 'Freddie',
     type: 'Cat - British Shorthair',
     description: "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
@@ -104,7 +104,7 @@ const freddie = new Animal ({
     parasites: "Parasites: none"
 })
 const charly = new Animal ({
-    img: 'assets/images/pets-charly.png',
+    img: './assets/images/pets-charly.png',
     name: 'Charly',
     type: 'Dog - Jack Russell Terrier ',
     description: "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
@@ -165,76 +165,34 @@ const btn_js_next = document.querySelector(".btn_js_next");
 const btn_js_small_next = document.querySelector(".btn_js_small_next");
 const track = document.querySelector(".slider_container")
 const cardWidth = document.querySelector(".slider_track").clientWidth;
+const widthDesctop = document.documentElement.clientWidth;
 const itemsCount =  document.querySelectorAll(".card").length;
 const itemLeft = document.querySelector('.item_left');
 const itemRight = document.querySelector('.item_right');
+const itemCenter = document.querySelector('.item_center');
 
-const createCardTemplate = () => {
+    const createCardTemplate = () => {
 
-    let genNum = Math.floor(Math.random()*8);
-    const card = document.createElement('div');
-    const createImg = document.createElement('img');
-    const createP = document.createElement('p');
-    const createBtn = document.createElement('button');
-    card.classList.add('card');
-    card.dataset.name = arrayAnimal[genNum].name.toLowerCase();
-    createP.classList.add('pets-card-title');
-    createBtn.classList.add('btn_slider');
-    createBtn.innerText = 'Learn more';
-    createBtn.dataset.name = arrayAnimal[genNum].name.toLowerCase();
-    createP.innerHTML = arrayAnimal[genNum].name;
-    createImg.src = arrayAnimal[genNum].img;
-    createImg.alt = 'picture'
-    card.appendChild(createImg);
-    card.appendChild(createP);
-    card.appendChild(createBtn);
+        let genNum = Math.floor(Math.random()*8);
+        const card = document.createElement('div');
+        const createImg = document.createElement('img');
+        const createP = document.createElement('p');
+        const createBtn = document.createElement('button');
+        card.classList.add('card');
+        card.dataset.name = arrayAnimal[genNum].name.toLowerCase();
+        createP.classList.add('pets-card-title');
+        createBtn.classList.add('btn_slider');
+        createBtn.innerText = 'Learn more';
+        createBtn.dataset.name = arrayAnimal[genNum].name.toLowerCase();
+        createP.innerHTML = arrayAnimal[genNum].name;
+        createImg.src = arrayAnimal[genNum].img;
+        createImg.alt = 'picture'
+        card.appendChild(createImg);
+        card.appendChild(createP);
+        card.appendChild(createBtn);
 
-    return card;
-}
-
-const randomGenerate = () => {
-    const itemNumberCenter = document.querySelectorAll('.item_center .pets-card-title');
-    let numberArray = [];
-    let genArray = [];
-    let itemsLeft = [];
-    for ( let i = 0; i < arrayAnimalStr.length; i++) {
-        genArray.push(arrayAnimalStr[i])
+        return card;
     }
-    for (let index = 0; index < itemNumberCenter.length; index++) {
-        const element = itemNumberCenter[index].innerHTML;
-        numberArray.push(element);
-    }
-    for ( let i = 0; i < numberArray.length; i++) {
-        for (let j = 0; j < genArray.length; j++) {
-            if (genArray[j] === numberArray[i].toLowerCase()) {
-                genArray.splice(j, 1);
-            }
-        }
-    }
-
-    let stackGenNum = [];
-    let slidsToShow = 3;
-        if (cardWidth < 900) {
-            slidsToShow = 2;
-        }
-        if (cardWidth < 580) {
-            slidsToShow = 1;
-        }
-    while(itemsLeft.length < slidsToShow) {
-        let genNum = Math.floor(Math.random()*5);
-        if (!stackGenNum.includes(genNum)) {
-            stackGenNum.push(genNum);
-            itemsLeft.push(genArray[genNum]);
-        }
-    }
-    console.log(itemsLeft[0]);
-    console.log(itemsLeft);
-    stackGenNum = [];
-    itemsLeft = itemsLeft.shift();
-    numberArray = [];
-    return itemsLeft[0];
-}
-
 
     const moveLeft = () => {
         track.classList.add('transition_left');
@@ -258,6 +216,7 @@ const randomGenerate = () => {
     track.addEventListener('animationend', (e) => {
         let itemWithChanges;
         if (e.animationName === 'move_left') {
+
             itemWithChanges = itemLeft;
             track.classList.remove('transition_left');
             document.querySelector('.item_center').innerHTML = itemLeft.innerHTML;
@@ -267,21 +226,57 @@ const randomGenerate = () => {
             document.querySelector('.item_center').innerHTML = itemRight.innerHTML;
         }
 
-        let slidsToShow = 3;
-        if (cardWidth < 900) {
-            slidsToShow = 2;
-        }
-        if (cardWidth < 580) {
-            slidsToShow = 1;
-        }
-
         itemWithChanges.innerHTML = '';
 
-        for (let i = 0; i < slidsToShow; i++) {
-            const card = createCardTemplate();
-            itemWithChanges.appendChild(card);
+        let slidsToShow = 3;
+        if (widthDesctop < 1280) {
+            slidsToShow = 2;
+            if (itemCenter.childElementCount > 2) {
+                itemCenter.removeChild(itemCenter.lastElementChild);
+            }
+            if (itemLeft.childElementCount > 2) {
+                itemLeft.removeChild(itemLeft.lastElementChild);
+            }
+            if (itemRight.childElementCount > 2) {
+                itemRight.removeChild(itemRight.lastElementChild);
+            }
         }
-
+        if (widthDesctop < 768) {
+            slidsToShow = 1;
+            if (itemCenter.childElementCount > 2) {
+                itemCenter.removeChild(itemCenter.lastElementChild);
+                itemCenter.removeChild(itemCenter.lastElementChild);
+            }
+            if (itemLeft.childElementCount > 2) {
+                itemLeft.removeChild(itemLeft.lastElementChild);
+                itemLeft.removeChild(itemLeft.lastElementChild);
+            }
+            if (itemRight.childElementCount > 2) {
+                itemRight.removeChild(itemRight.lastElementChild);
+                itemRight.removeChild(itemRight.lastElementChild);
+            }
+            if (itemCenter.childElementCount > 1) {
+                itemCenter.removeChild(itemCenter.lastElementChild);
+            }
+            if (itemLeft.childElementCount > 1) {
+                itemLeft.removeChild(itemLeft.lastElementChild);
+            }
+            if (itemRight.childElementCount > 1) {
+                itemRight.removeChild(itemRight.lastElementChild);
+            }
+        }
+        let arr = [];
+        let arrlenghtSet = [];
+        while (arr.length < slidsToShow) {
+            const card = createCardTemplate();
+            arr.push(card.dataset.name);
+            arrlenghtSet = [...new Set(arr)];
+            itemWithChanges.appendChild(card);
+            if (arr.length > arrlenghtSet.length) {
+                itemWithChanges.removeChild(card);
+                arr = [...new Set(arr)];
+            }
+        }
         btn_js_previous.addEventListener("mousedown", moveLeft);
         btn_js_next.addEventListener("mousedown", moveRight);
         btn_js_small_previous.addEventListener("mousedown", moveLeft);
@@ -305,6 +300,7 @@ const POPUP_TITLE = document.querySelector('.popup_title');
          const BTN_LINK = POPUP_CARDS[i];
          BTN_LINK.addEventListener('mousedown', (e) => {
              const GET_NAME = e.target.closest('div').getAttribute('data-name');
+             console.log(e.target.closest('div').getAttribute('data-name'));
             arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show()
             POPUP.classList.add('open');
             POPUP_BODY.classList.add('body_lock');
@@ -329,3 +325,5 @@ const POPUP_TITLE = document.querySelector('.popup_title');
           }
         })
     }
+
+    document.body.addEventListener('mousedown', (e) => console.log(e.target))

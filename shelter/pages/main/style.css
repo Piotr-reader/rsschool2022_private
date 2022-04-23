@@ -351,11 +351,13 @@ main {
 }
 .transition_left {
     animation-name: move_left;
-    animation-duration: 2s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
 }
 .transition_right {
     animation-name: move_right;
-    animation-duration: 2s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
 }
 
 /*  section HELP */
@@ -674,12 +676,6 @@ main {
     margin-bottom: 7px;
 }
 
-/* @media (max-width: 1100px) {
-    .slider_container {
-        width: 585px;
-    }
-
-} */
 
 @media (max-width: 1279px) {
 
@@ -1003,7 +999,7 @@ main {
   .slider_container {
       margin-left: 25px;
       width: 320px;
-      left: -1250px;
+      left: -311px;
   }
   .slider_btn_container_small {
       display: flex;
@@ -1139,12 +1135,19 @@ main {
     margin: 0px;
 }
 @keyframes move_left {
-    from {left: -1250px}
-    to {left: -935px}
+    from {left: -311px}
+    to {left: 0px}
 }
 @keyframes move_right {
-  from {left: -1250px}
-  to {left: -1565px}
+  from {left: -311px}
+  to {left: -622px}
 }
-
+.transition_left {
+    animation-name: move_left;
+    animation-duration: .3s;
+}
+.transition_right {
+    animation-name: move_right;
+    animation-duration: .3s;
+}
 }
