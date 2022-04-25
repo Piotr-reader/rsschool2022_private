@@ -307,8 +307,8 @@ const popup_update = () => {
         });
      }
 }
- if (popup_updates.length > 0) {
-    [...popup_updates].forEach(card => {
+ if (POPUP_CARDS.length > 0) {
+    POPUP_CARDS.forEach(card => {
         card.addEventListener('mousedown', (e) => {
             const GET_NAME = e.currentTarget.closest('div').getAttribute('data-name');
             arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show()
