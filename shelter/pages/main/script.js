@@ -199,7 +199,6 @@ const itemCenter = document.querySelector('.item_center');
         btn_js_small_previous.removeEventListener("mousedown", moveLeft);
         btn_js_next.removeEventListener("mousedown", moveRight);
         btn_js_small_next.removeEventListener("mousedown", moveRight);
-        popup_update()
     };
     const moveRight = () => {
         track.classList.add('transition_right');
@@ -207,7 +206,6 @@ const itemCenter = document.querySelector('.item_center');
         btn_js_previous.removeEventListener("mousedown", moveLeft);
         btn_js_small_previous.removeEventListener("mousedown", moveRight);
         btn_js_small_next.removeEventListener("mousedown", moveLeft);
-        popup_update()
     };
     btn_js_previous.addEventListener("mousedown", moveLeft);
     btn_js_next.addEventListener("mousedown", moveRight);
@@ -276,6 +274,7 @@ const itemCenter = document.querySelector('.item_center');
                 itemWithChanges.removeChild(card);
                 arr = [...new Set(arr)];
             }
+            popup_update();
         }
         btn_js_previous.addEventListener("mousedown", moveLeft);
         btn_js_next.addEventListener("mousedown", moveRight);
@@ -293,11 +292,11 @@ const POPUP_BODY = document.querySelector('body');
 const POPUP = document.querySelector('.popup');
 const POPUP_CLOSE = document.querySelector('.popup_close');
 const POPUP_TITLE = document.querySelector('.popup_title');
-const popup_updates = document.querySelector('.popup_updates');
+const popup_updates = document.querySelector('.popup_updates').children;
 
 const popup_update = () => {
-    if (POPUP_CARDS.length > 0) {
-        POPUP_CARDS.forEach(card => {
+    if (popup_updates.length > 0) {
+        [...popup_updates].forEach(card => {
             card.addEventListener('mousedown', (e) => {
                 const GET_NAME = e.currentTarget.closest('div').getAttribute('data-name');
                 arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show()
@@ -308,8 +307,8 @@ const popup_update = () => {
         });
      }
 }
- if (POPUP_CARDS.length > 0) {
-    POPUP_CARDS.forEach(card => {
+ if (popup_updates.length > 0) {
+    [...popup_updates].forEach(card => {
         card.addEventListener('mousedown', (e) => {
             const GET_NAME = e.currentTarget.closest('div').getAttribute('data-name');
             arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show()
