@@ -7,6 +7,9 @@ body {
     max-width: 1280px;
     margin: 0 auto;
 }
+.body_lock {
+    overflow: hidden;
+}
 a {
     text-decoration: none;
 }
@@ -388,12 +391,20 @@ main {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+@keyframes card_close {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
 .card_open{
     animation-name: card_open;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
 }
-
+.card_close{
+    animation-name: card_close;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
 @media (max-width: 1279px) {
 
     body {

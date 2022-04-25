@@ -195,28 +195,24 @@ const createCardTemplate = () => {
 const moveLeft = () => {
     if (Number(btn_number.innerHTML) > 1) {
         btn_number.innerHTML = Number(btn_number.innerHTML)-1;
-        btn_number_update();
+        openCardAnimation();
     }
     checkStatusBtn();
-    openCardAnimation();
 };
 const moveRight = () => {
     if (Number(btn_number.innerHTML) < itemsArray.length) {
         btn_number.innerHTML = Number(btn_number.innerHTML)+1;
-        btn_number_update();
+        openCardAnimation();
     }
     checkStatusBtn();
-    openCardAnimation();
 };
 const moveStart = () => {
     btn_number.innerHTML = 1;
-    btn_number_update();
     checkStatusBtn();
     openCardAnimation();
 };
 const moveEnd = () => {
     btn_number.innerHTML = itemsArray.length;
-    btn_number_update();
     checkStatusBtn();
     openCardAnimation();
 };
@@ -243,7 +239,6 @@ while (itemsArray.length < totalPages) {
     itemsArray.push(pageArray);
     pageArray =[];
 }
-
 
 const btn_number_update = () => {
     track.innerHTML = '';
@@ -276,14 +271,18 @@ const checkStatusBtn = () => {
         btn_last_page.removeEventListener("mousedown", moveEnd);
     }
 }
-
 const openCardAnimation = () => {
-    track.classList.add('card_open');
-    btn_number_updates();
+    track.classList.add('card_close');
     track.addEventListener('animationend', (e) => {
-        track.classList.remove('card_open');
+        btn_number_update();
+        track.classList.remove('card_close');
+        track.classList.add('card_open');
+        track.addEventListener('animationend', (e) => {
+            track.classList.remove('card_open');
+        })
         btn_number_updates_non();
         checkStatusBtn();
+        popup_update();
     });
 }
 const btn_number_updates = () => {
@@ -315,8 +314,21 @@ const POPUP = document.querySelector('.popup');
 const POPUP_CLOSE = document.querySelector('.popup_close');
 const POPUP_TITLE = document.querySelector('.popup_title');
 const POPUP_CARDS = document.querySelectorAll('.card');
-const POPUP_track = document.querySelector('.pets_slider').children;
+let POPUP_track = document.querySelector('.pets_slider').children;
 
+ const popup_update = () => {
+    if (POPUP_track.length > 0) {
+        [...POPUP_track].forEach(card => {
+            card.addEventListener('mousedown', (e) => {
+                let GET_NAME = e.currentTarget.getAttribute('data-name');
+                arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show();
+                POPUP.classList.add('open');
+                POPUP_BODY.classList.add('body_lock');
+                POPUP_TITLE.classList.add('active_title');
+            });
+        })
+    }
+}
 if (POPUP_track.length > 0) {
     [...POPUP_track].forEach(card => {
         card.addEventListener('mousedown', (e) => {
