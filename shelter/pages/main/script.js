@@ -190,7 +190,6 @@ const itemCenter = document.querySelector('.item_center');
         card.appendChild(createImg);
         card.appendChild(createP);
         card.appendChild(createBtn);
-
         return card;
     }
 
@@ -200,6 +199,7 @@ const itemCenter = document.querySelector('.item_center');
         btn_js_small_previous.removeEventListener("mousedown", moveLeft);
         btn_js_next.removeEventListener("mousedown", moveRight);
         btn_js_small_next.removeEventListener("mousedown", moveRight);
+        popup_update()
     };
     const moveRight = () => {
         track.classList.add('transition_right');
@@ -207,6 +207,7 @@ const itemCenter = document.querySelector('.item_center');
         btn_js_previous.removeEventListener("mousedown", moveLeft);
         btn_js_small_previous.removeEventListener("mousedown", moveRight);
         btn_js_small_next.removeEventListener("mousedown", moveLeft);
+        popup_update()
     };
     btn_js_previous.addEventListener("mousedown", moveLeft);
     btn_js_next.addEventListener("mousedown", moveRight);
@@ -216,7 +217,6 @@ const itemCenter = document.querySelector('.item_center');
     track.addEventListener('animationend', (e) => {
         let itemWithChanges;
         if (e.animationName === 'move_left') {
-
             itemWithChanges = itemLeft;
             track.classList.remove('transition_left');
             document.querySelector('.item_center').innerHTML = itemLeft.innerHTML;
@@ -286,28 +286,38 @@ const itemCenter = document.querySelector('.item_center');
 
 
 // popup
-const POPUP_CARDS = document.querySelectorAll('.card');
+let POPUP_CARDS = document.querySelectorAll('.card');
 const POPUP_BTNS = document.querySelectorAll('.btn_slider');
 const BODY = document.querySelector('.popup_body');
 const POPUP_BODY = document.querySelector('body');
 const POPUP = document.querySelector('.popup');
 const POPUP_CLOSE = document.querySelector('.popup_close');
 const POPUP_TITLE = document.querySelector('.popup_title');
+const popup_updates = document.querySelector('.popup_updates');
 
-
+const popup_update = () => {
+    if (POPUP_CARDS.length > 0) {
+        POPUP_CARDS.forEach(card => {
+            card.addEventListener('mousedown', (e) => {
+                const GET_NAME = e.currentTarget.closest('div').getAttribute('data-name');
+                arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show()
+                POPUP.classList.add('open');
+                POPUP_BODY.classList.add('body_lock');
+                POPUP_TITLE.classList.add('active_title');
+            });
+        });
+     }
+}
  if (POPUP_CARDS.length > 0) {
-     for ( let i = 0; i < POPUP_CARDS.length; i++) {
-         const BTN_LINK = POPUP_CARDS[i];
-         BTN_LINK.addEventListener('mousedown', (e) => {
-             const GET_NAME = e.target.closest('div').getAttribute('data-name');
-             console.log(e.target.closest('div').getAttribute('data-name'));
+    POPUP_CARDS.forEach(card => {
+        card.addEventListener('mousedown', (e) => {
+            const GET_NAME = e.currentTarget.closest('div').getAttribute('data-name');
             arrayAnimal[arrayAnimalStr.indexOf(GET_NAME)].show()
             POPUP.classList.add('open');
             POPUP_BODY.classList.add('body_lock');
             POPUP_TITLE.classList.add('active_title');
-            e.preventDefault();
-         });
-     }
+        });
+    });
  }
 
     POPUP_CLOSE.addEventListener('mousedown', () => {
@@ -325,5 +335,3 @@ const POPUP_TITLE = document.querySelector('.popup_title');
           }
         })
     }
-
-    document.body.addEventListener('mousedown', (e) => console.log(e.target))
