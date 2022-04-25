@@ -69,6 +69,9 @@ header {
 
     align-items: center;
 }
+.navbar_width {
+    display: flex;
+}
 ul {
     list-style-type: none;
 }
@@ -122,13 +125,8 @@ main {
     padding: 0 40px;
 }
 .card {
-    /* width: 270px;
-    height: 435px;
-    text-align: center;
-    justify-self: center; */
     background: #FAFAFA;
     border-radius: 9px;
-
     transition: 300ms;
     overflow: hidden;
 }
@@ -136,6 +134,7 @@ main {
     width: 100%;
 }
 .card:hover {
+    cursor: pointer;
     background: white;
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
@@ -154,10 +153,9 @@ main {
     color: #545454;
     margin: 30px 0;
 }
+
 .btn_slider {
-
     width: 70%;
-
     height: 52px;
     border: 2px solid #F1CDB3;
     box-sizing: border-box;
@@ -185,6 +183,9 @@ main {
     justify-content: space-between;
     margin-top: 60px;
     padding-bottom: 100px;
+}
+.img_rotate {
+    transform: rotate(180deg);
 }
 .btn_previous {
     display: flex;
@@ -270,14 +271,146 @@ main {
 
 }
 
+/* popup */
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.6);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+.popup.open .popup_content {
+    opacity: 1;
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+}
+.popup_body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 50px;
+}
+.popup_content {
+    max-width: 900px;
+    background-color: #FAFAFA;
+    border-radius: 9px;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    position: relative;
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+.popup_close {
+    display: flex;
+    position: absolute;
+    top: -52px;
+    right: -43px;
+    align-items: center;
+    padding: 0 17px;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.popup_body:hover .popup_close {
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+}
+.popup_content:hover .popup_close {
+    background: #FAFAFA;
+    border: 2px solid #F1CDB3;
+}
+.popup_close:hover {
+    background: #FDDCC4 !important;
+    border: 2px solid #FDDCC4 !important;
+ }
+.popup_title {
+    display: flex;
+}
+.popup_title ul {
+    list-style-type: disc;
+    color: #F1CDB3;
+    margin-left: 15px;
+}
+.popup_img {
+    width: 500px;
+    border-radius: 9px;
+}
+.popup_text {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+.popup_name,
+.popup_type,
+.popup_description,
+.popup_links {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #000000;
+}
+.popup_name {
+    font-size: 35px;
+    line-height: 130%;
+    text-transform: capitalize;
+}
+.popup_type {
+    font-size: 20px;
+    line-height: 115%;
+    margin: 0;
+}
+.popup_description {
+    margin: 40px 0;
+    max-width: 350px;
+    font-size: 15px;
+    line-height: 17px;
+}
+.popup_links {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 110%;
+    margin-bottom: 7px;
+}
+@keyframes card_open {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.card_open{
+    animation-name: card_open;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+}
+
 @media (max-width: 1279px) {
-    header {
+
+    body {
+        max-width: 767px;
+      }
+      .wrapper {
+          max-width: 767px;
+      }
+      header {
+        max-width: 767px;
+        margin-bottom: 0px;
         padding: 0px 30px;
-        padding-top: 14px;
-    }
+        padding-bottom: 14px;
+      }
     .main_pets_head {
         margin-bottom: 25px;
-        padding-top: 80px;
+        padding-top: 170px;
     }
     .pets_slider {
         grid-template: repeat(3, 1fr) / repeat(2, 1fr);
@@ -300,24 +433,49 @@ main {
         margin: 0 auto;
         padding-top: 25px;
     }
+    .popup_content {
+        max-width: 682px;
+      }
+      .popup_text {
+          padding-top: 10px;
+          padding-left: 10px;
+      }
+      .popup_description {
+          max-width: 250px;
+          margin: 20px 0;
+          font-size: 13px;
+          line-height: 14px;
+      }
+
+      .popup_img {
+          width: 350px;
+      }
+      .popup_links {
+          margin-bottom: 5px;
+      }
 
 }
 
 @media (max-width: 767px) {
+    body {
+        width: 320px;
+    }
+    .wrapper {
+        padding-top: 30px;
+        max-width: 320px;
+      }
     header {
         padding: 0;
         position: fixed;
         justify-content: unset;
-        width: 100%;
+        width: 320px;
         top: 0;
-        left: 0;
         z-index: 50;
       }
       header::before {
           content: "";
           position: absolute;
           top: 0;
-          left: 0;
           width: 100%;
           height: 100%;
           z-index: 1;
@@ -336,6 +494,7 @@ main {
       padding-left: 14px;
       margin-bottom: 30px;
     }
+
     .header_burger {
         display: block;
         position: relative;
@@ -354,11 +513,11 @@ main {
     }
       .header_burger::before {
         top: 0;
-        transition: .3s;
+        transition: .3s ease-in;
     }
       .header_burger::after {
         bottom: 0;
-        transition: .3s;
+        transition: .3s ease-in;
     }
       .header_burger span {
         height: 2px;
@@ -367,19 +526,26 @@ main {
         width: 100%;
         left: 0;
         top: 10px;
-        transition: .3s;
+        transition: .3s ease-in;
     }
       .navbar {
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: -100%;
-        padding-top: 263px;
+        left: 100%;
         width: 100%;
         height: 100%;
-        background-color: #FFFFFF;
-        transition: .3s;
+        transition: .3s ease-in;
+        text-align: center;
       }
+      .navbar_width {
+        width: 320px;
+        display: unset;
+        background-color: #FFFFFF;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 263px;
+    }
       .navbar li {
           margin-bottom: 64px;
     }
@@ -389,35 +555,38 @@ main {
     }
       .active_burger {
         left: 0;
-        transition: .3s;
+        transition: .3s ease-in;
     }
       .active_burger_burger span {
         transform: rotate(90deg);
         top: 20px;
         left: -9px;
-        transition: .3s;
+        transition: .3s ease-in;
       }
       .active_burger_burger::before {
         transform: rotate(90deg);
         left: -19px;
         top: 20px;
-        transition: .3s;
+        transition: .3s ease-in;
       }
       .active_burger_burger::after {
         transform: rotate(90deg);
         left: 1px;
         top: 20px;
-        transition: .3s;
+        transition: .3s ease-in;
       }
        .lock {
            overflow: hidden;
+           background: rgba(41, 41, 41, 0.6);
+           transition: .3s ease-in;
        }
-
+       main {
+           width: 320px;
+       }
     .main_pets_head {
         font-size: 25px;
         line-height: 37px;
-        margin-top: 77px;
-        margin-bottom: 30px;
+        padding-top: 109px;
     }
     .card {
         padding-bottom: 20px;
@@ -441,6 +610,9 @@ main {
         margin-top: 25px;
         padding-bottom: 40px;
     }
+    .wrapper_footer {
+        width: 320px;
+    }
     .footer_content {
         display: unset;
         padding: 0 10px;
@@ -457,5 +629,33 @@ main {
     }
     .footer_puppy {
         padding-top: 42px;
+    }
+
+    .popup_content {
+        width: 240px;
+    }
+      .popup_img {
+        display: none;
+    }
+    .popup_text {
+        padding: 10px;
+        padding-bottom: 0px;
+        text-align: center;
+    }
+    .popup_description {
+        margin-bottom: 24px;
+        line-height: 14px;
+        text-align: justify;
+    }
+    .popup_links {
+        text-align: justify;
+        margin-bottom: 2px;
+    }
+    .popup_close {
+        top: -50px;
+        right: -32px;
+    }
+    .popup_parasites {
+        margin: 0px;
     }
 }
