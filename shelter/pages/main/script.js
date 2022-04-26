@@ -138,12 +138,12 @@ navbarMain.addEventListener('mousedown', () => {
     navbar.classList.remove('active_burger');
     burger.classList.remove('active_burger_burger');
 })
-navbarText.addEventListener('mousedown', () => {
+navbarText.addEventListener('click', () => {
     body.classList.remove('lock');
     navbar.classList.remove('active_burger');
     burger.classList.remove('active_burger_burger');
 })
-navbarTextLast.addEventListener('mousedown', () => {
+navbarTextLast.addEventListener('click', () => {
     body.classList.remove('lock');
     navbar.classList.remove('active_burger');
     burger.classList.remove('active_burger_burger');
@@ -334,3 +334,5 @@ const popup_update = () => {
           }
         })
     }
+
+
