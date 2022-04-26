@@ -170,10 +170,10 @@ const itemsCount =  document.querySelectorAll(".card").length;
 const itemLeft = document.querySelector('.item_left');
 const itemRight = document.querySelector('.item_right');
 const itemCenter = document.querySelector('.item_center');
+let slidsToShow = 3;
+let genNum;
 
     const createCardTemplate = () => {
-
-        let genNum = Math.floor(Math.random()*8);
         const card = document.createElement('div');
         const createImg = document.createElement('img');
         const createP = document.createElement('p');
@@ -225,8 +225,27 @@ const itemCenter = document.querySelector('.item_center');
         }
 
         itemWithChanges.innerHTML = '';
+        let arr = [];
+        let arrlenghtSet = [];
+        while (arr.length < slidsToShow) {
+            genNum = Math.floor(Math.random()*8);
+            const card = createCardTemplate();
+            arr.push(card.dataset.name);
+            arrlenghtSet = [...new Set(arr)];
+            itemWithChanges.appendChild(card);
+            if (arr.length > arrlenghtSet.length) {
+                itemWithChanges.removeChild(card);
+                arr = [...new Set(arr)];
+            }
+            popup_update();
+        }
+        btn_js_previous.addEventListener("mousedown", moveLeft);
+        btn_js_next.addEventListener("mousedown", moveRight);
+        btn_js_small_previous.addEventListener("mousedown", moveLeft);
+        btn_js_small_next.addEventListener("mousedown", moveRight);
+    })
 
-        let slidsToShow = 3;
+    const checkWidthDisplay = () => {
         if (widthDesctop < 1280) {
             slidsToShow = 2;
             if (itemCenter.childElementCount > 2) {
@@ -263,26 +282,8 @@ const itemCenter = document.querySelector('.item_center');
                 itemRight.removeChild(itemRight.lastElementChild);
             }
         }
-        let arr = [];
-        let arrlenghtSet = [];
-        while (arr.length < slidsToShow) {
-            const card = createCardTemplate();
-            arr.push(card.dataset.name);
-            arrlenghtSet = [...new Set(arr)];
-            itemWithChanges.appendChild(card);
-            if (arr.length > arrlenghtSet.length) {
-                itemWithChanges.removeChild(card);
-                arr = [...new Set(arr)];
-            }
-            popup_update();
-        }
-        btn_js_previous.addEventListener("mousedown", moveLeft);
-        btn_js_next.addEventListener("mousedown", moveRight);
-        btn_js_small_previous.addEventListener("mousedown", moveLeft);
-        btn_js_small_next.addEventListener("mousedown", moveRight);
-    })
-
-
+    }
+    checkWidthDisplay();
 
 // popup
 let POPUP_CARDS = document.querySelectorAll('.card');
