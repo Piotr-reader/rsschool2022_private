@@ -199,6 +199,7 @@ let genNum;
         btn_js_small_previous.removeEventListener("mousedown", moveLeft);
         btn_js_next.removeEventListener("mousedown", moveRight);
         btn_js_small_next.removeEventListener("mousedown", moveRight);
+
     };
     const moveRight = () => {
         track.classList.add('transition_right');
@@ -241,26 +242,16 @@ let genNum;
                 cardRandom.push(card);
             }
         }
-        arr = arr.slice(2)
-
         for (let i = 0; i < cardRandom.length; i++) {
             itemWithChanges.appendChild(cardRandom[i]);
+            if (e.animationName === 'move_left') {
+                document.querySelector('.item_right').innerHTML = itemLeft.innerHTML;
+            } else {
+                document.querySelector('.item_left').innerHTML = itemRight.innerHTML;
+            }
             popup_update();
         }
 
-
-        // while (arr.length < slidsToShow) {
-        //     genNum = Math.floor(Math.random()*8);
-        //     const card = createCardTemplate();
-        //     arr.push(card.dataset.name);
-        //     arrlenghtSet = [...new Set(arr)];
-        //     itemWithChanges.appendChild(card);
-        //     if (arr.length > arrlenghtSet.length) {
-        //         itemWithChanges.removeChild(card);
-        //         arr = [...new Set(arr)];
-        //     }
-        //     popup_update();
-        // }
         btn_js_previous.addEventListener("mousedown", moveLeft);
         btn_js_next.addEventListener("mousedown", moveRight);
         btn_js_small_previous.addEventListener("mousedown", moveLeft);
