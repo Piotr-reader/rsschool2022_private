@@ -227,18 +227,40 @@ let genNum;
         itemWithChanges.innerHTML = '';
         let arr = [];
         let arrlenghtSet = [];
-        while (arr.length < slidsToShow) {
+        let cardRandom = [];
+
+        [...itemCenter.children].forEach(card => arr.push(card.dataset.name));
+        while (arr.length < slidsToShow*2) {
             genNum = Math.floor(Math.random()*8);
             const card = createCardTemplate();
             arr.push(card.dataset.name);
             arrlenghtSet = [...new Set(arr)];
-            itemWithChanges.appendChild(card);
             if (arr.length > arrlenghtSet.length) {
-                itemWithChanges.removeChild(card);
-                arr = [...new Set(arr)];
+                arr.pop();
+            } else {
+                cardRandom.push(card);
             }
+        }
+        arr = arr.slice(2)
+
+        for (let i = 0; i < cardRandom.length; i++) {
+            itemWithChanges.appendChild(cardRandom[i]);
             popup_update();
         }
+
+
+        // while (arr.length < slidsToShow) {
+        //     genNum = Math.floor(Math.random()*8);
+        //     const card = createCardTemplate();
+        //     arr.push(card.dataset.name);
+        //     arrlenghtSet = [...new Set(arr)];
+        //     itemWithChanges.appendChild(card);
+        //     if (arr.length > arrlenghtSet.length) {
+        //         itemWithChanges.removeChild(card);
+        //         arr = [...new Set(arr)];
+        //     }
+        //     popup_update();
+        // }
         btn_js_previous.addEventListener("mousedown", moveLeft);
         btn_js_next.addEventListener("mousedown", moveRight);
         btn_js_small_previous.addEventListener("mousedown", moveLeft);
